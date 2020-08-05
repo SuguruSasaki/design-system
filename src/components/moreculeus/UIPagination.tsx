@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Pagination from "@material-ui/lab/Pagination";
+// import Pagination from "@material-ui/lab/Pagination";
 
 type UIPaginationProps = {
   count: number;
@@ -9,7 +9,7 @@ type UIPaginationProps = {
 const UIPagination: React.FC<UIPaginationProps> = ({ count }) => {
   return (
     <Wrapper>
-      <Pagination count={count} />
+      {count}
     </Wrapper>
   );
 };

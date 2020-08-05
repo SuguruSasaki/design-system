@@ -1,12 +1,12 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 
-type UISelectboxProps = {
+type SelectboxProps = {
     label: string
 }
 
-const UISelectboxProps: React.FC<UISelectboxProps> = ({ label }) => {
+const Selectbox: React.FC<SelectboxProps> = ({ label }) => {
     return <Button>{label}</Button>
 }
 
-export default UISelectbox
+export default Selectbox
