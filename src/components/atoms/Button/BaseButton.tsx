@@ -18,10 +18,18 @@ type ButtonProps = {
   handler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   children: React.ReactNode;
   className?: string;
+  disabled?: boolean
+  variant?: 'text' | 'outlined' | 'contained';
 };
 
-const Button: React.FC<ButtonProps> = ({ children, className, handler }) => (
-  <MUI.Button className={className} onClick={handler}>
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className,
+  handler,
+  variant = "text",
+  disabled = false
+}) => (
+  <MUI.Button className={className} onClick={handler} variant={variant} disabled={disabled}>
     {children}
   </MUI.Button>
 );
@@ -29,10 +37,10 @@ const Button: React.FC<ButtonProps> = ({ children, className, handler }) => (
 // 注意
 // ボタンコンポーネントの基本スタイルは変更しないでください。
 export default styled(Button)({
-  padding: "8px 12px",
+  padding: "11px 12px",
   "box-sizing": "border-box",
   "font-family": "Noto Sans CJK JP",
   "font-size": "0.875rem",
   "font-weight": "bold",
-  "line-height": "1.313rem",
+  "line-height": "1",
 });

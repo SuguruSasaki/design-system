@@ -9,7 +9,7 @@ export const student = {
   },
 } as const;
 
-export const company = {
+export const client = {
   primary: {
     light: "#EFEDFC",
     main: "#7F6DEA",
