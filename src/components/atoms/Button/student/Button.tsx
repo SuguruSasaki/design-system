@@ -8,7 +8,6 @@ export default styled(BaseButton)({
     "padding": "15px 12px",
     color: "#FFF",
     "font-weight": "bold",
-    width: "100%",
     "&:hover" : {
         "background-color": `${student.primary.light}`,
         color: `${student.primary.main}`,

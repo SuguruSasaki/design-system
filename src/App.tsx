@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <BaseTitle label="This is title." />
-        <Button handler={(e) => console.log(e)}>Sample</Button>
+        <Button handler={(e) => console.log(e)}>スカウトを送る</Button>
         <BorderButton handler={(e) => console.log(e)}>
           <img src={Facebook} alt="facebook" />
           プロフィールを見る
