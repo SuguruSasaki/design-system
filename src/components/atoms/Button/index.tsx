@@ -16,18 +16,20 @@ import * as MUI from "@material-ui/core";
 
 type ButtonProps = {
   handler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  children: React.ReactNode;
+  children: React.ReactElement
   className?: string;
   disabled?: boolean
+  variant?: 'text' | 'outlined' | 'contained';
 };
 
 const Button: React.FC<ButtonProps> = ({
   children,
   className,
   handler,
+  variant = "text",
   disabled = false
 }) => (
-  <MUI.Button className={className} onClick={handler}  disabled={disabled}>
+  <MUI.Button className={className} onClick={handler} variant={variant} disabled={disabled}>
     {children}
   </MUI.Button>
 );
