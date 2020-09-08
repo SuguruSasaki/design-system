@@ -1,37 +1,54 @@
 import React from "react";
-import styled from "styled-components";
-import BaseTitle from "./BaseTitle";
-import Facebook from "./assets/facebook.svg";
 import {
-  Button,
-  BorderButton,
-  CltButton,
-  BaseTextArea,
+  UITypography,
+  Variants,
+  Tags,
+  H1,
+  H2,
+  H3,
+  H4, 
+  H5,
+  H6,
+  Body1,
+  Body2,
+  Caption,
 } from "./components/atoms";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    h1: {
+      fontSize: "6rem",
+    },
+    body1: {
+      fontWeight: 500,
+    },
+    button: {
+      fontStyle: 'italic',
+    },
+  },
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <BaseTitle label="This is title." />
-        <Button handler={(e) => console.log(e)}>スカウトを送る</Button>
-        <BorderButton handler={(e) => console.log(e)}>
-          <img src={Facebook} alt="facebook" />
-          プロフィールを見る
-        </BorderButton>
-        <CltButton handler={(e) => console.log(e)} disabled={true}>
-          スカウト送信
-        </CltButton>
-        <LayoutSection>
-          <BaseTextArea label={"求める人物像"} />
-        </LayoutSection>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <UITypography variant={Variants.h1} component={Tags.p}>Hello world</UITypography>
+        <H1>Hello world</H1>
+        <H2>Hello world</H2>
+        <H3>Hello world</H3>
+        <H4>Hello world</H4>
+        <H5>Hello world</H5>
+        <H6>Hello world</H6>
+        <Body1>Hello world</Body1>
+        <Body2>Hello world</Body2>
+        <Caption>Hello world</Caption>
+      </div>
+    </ThemeProvider>
+    
   );
 }
 
-const LayoutSection = styled.div`
-  margin: 32px 0 0 0;
-`;
+
 
 export default App;
